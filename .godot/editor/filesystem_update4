@@ -1,0 +1,5 @@
+res://main.tscn
+res://levels/bedroom.tscn
+res://player/Movement.gd
+res://levels/Bedroom.gd
+res://levels/LevelMap.gd
