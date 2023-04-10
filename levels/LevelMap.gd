@@ -1,15 +1,24 @@
+class_name LevelMap
 extends TileMap
 
-@export var EXIT_TILE := Vector2i(3,7)
-@export var EXIT_TO_SCENE: PackedScene = preload("res://levels/house.tscn")
+@export var player_start: Vector2i
 
-var player_start
+@export var EXIT_TILE: Vector2i
+@export var EXIT_TILE_TO_SCENE: String
+@export var EXIT_TILE_TRANS: String
+
+@export var EXIT_TILE_2: Vector2i
+@export var EXIT_TILE_TO_SCENE_2: String
+@export var EXIT_TILE_TRANS_2: String
+
 
 @onready var player = $Player
 
 
-func set_player(tile: Vector2i) -> void:
-	player_start = tile
+func _ready() -> void:
+	if Globals.saved_spawn != Vector2i.ZERO:
+		player_start = Globals.saved_spawn
+		
 	player.current_tile = player_start
 	player.position= player_start*16
 	
@@ -17,4 +26,11 @@ func set_player(tile: Vector2i) -> void:
 func switch_scene(tile: Vector2i) -> void:
 	match tile:
 		EXIT_TILE:
-			get_tree().change_scene_to_packed(EXIT_TO_SCENE)
+			var destination = Globals.exit_code[EXIT_TILE_TO_SCENE]
+			Globals.set_spawn(EXIT_TILE_TRANS)
+			get_tree().change_scene_to_file(destination)
+		EXIT_TILE_2:
+			var destination = Globals.exit_code[EXIT_TILE_TO_SCENE_2]
+			Globals.set_spawn(EXIT_TILE_TRANS_2)
+			get_tree().change_scene_to_file(destination)
+			

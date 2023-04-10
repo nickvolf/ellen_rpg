@@ -29,6 +29,7 @@ func move_to_tile(direction: Vector2i) -> void:
 	await t.finished
 	
 	# Post Movement
+	_player.sprite.stop()
 	if LevelMap.get_cell_source_id(5, new_tile) != -1:
 		print(new_tile)
 		LevelMap.switch_scene(new_tile)
