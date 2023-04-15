@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://dh06x1p28d81y"]
+
+[ext_resource type="TileSet" uid="uid://c2bpujqik8hyi" path="res://sprites/AllTiles.tres" id="1_1yrjo"]
+[ext_resource type="PackedScene" uid="uid://bhnlqa22xrh1j" path="res://player/player.tscn" id="1_mocxx"]
+[ext_resource type="Script" path="res://levels/LevelMap.gd" id="2_gkog6"]
+[ext_resource type="Script" path="res://player/InputManager.gd" id="2_j648g"]
+[ext_resource type="Script" path="res://player/Movement.gd" id="3_qxs5o"]
+
+[node name="BaseLevel" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_1yrjo")
+format = 2
+layer_0/name = "collision"
+layer_1/name = "floor"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "wall"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "decoration"
+layer_3/enabled = true
+layer_3/modulate = Color(1, 1, 1, 1)
+layer_3/y_sort_enabled = false
+layer_3/y_sort_origin = 0
+layer_3/z_index = 0
+layer_3/tile_data = PackedInt32Array()
+layer_4/name = "furniture"
+layer_4/enabled = true
+layer_4/modulate = Color(1, 1, 1, 1)
+layer_4/y_sort_enabled = false
+layer_4/y_sort_origin = 0
+layer_4/z_index = 0
+layer_4/tile_data = PackedInt32Array()
+layer_5/name = "exit"
+layer_5/enabled = true
+layer_5/modulate = Color(1, 1, 1, 1)
+layer_5/y_sort_enabled = false
+layer_5/y_sort_origin = 0
+layer_5/z_index = 0
+layer_5/tile_data = PackedInt32Array()
+script = ExtResource("2_gkog6")
+player_start = Vector2i(5, 5)
+
+[node name="Player" parent="TileMap" instance=ExtResource("1_mocxx")]
+position = Vector2(106, 55)
+
+[node name="InputManager" type="Node" parent="TileMap" node_paths=PackedStringArray("_player", "MovementManager")]
+script = ExtResource("2_j648g")
+_player = NodePath("../Player")
+MovementManager = NodePath("../MovementManager")
+
+[node name="MovementManager" type="Node" parent="TileMap" node_paths=PackedStringArray("_player")]
+script = ExtResource("3_qxs5o")
+_player = NodePath("../Player")

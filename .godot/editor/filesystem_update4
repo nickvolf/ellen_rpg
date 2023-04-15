@@ -1,10 +1,5 @@
-res://levels/house.tscn
-res://levels/bedroom.tscn
-res://globals/globals.gd
-res://levels/LevelMap.gd
-res://levels/town.tscn
-res://player/InputManager.gd
-res://player/player.tscn
-res://player/Player.gd
-res://player/Movement.gd
+res://levels/base_level.tscn
 res://sprites/basic_tiles.tres
+res://sprites/AllTiles.tres
+res://levels/bedroom.tscn
+res://levels/test_inheritence.tscn
