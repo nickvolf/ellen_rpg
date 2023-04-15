@@ -1,5 +1,2 @@
-res://levels/base_level.tscn
-res://sprites/basic_tiles.tres
-res://sprites/AllTiles.tres
-res://levels/bedroom.tscn
 res://levels/test_inheritence.tscn
+res://sprites/AllTiles.tres
