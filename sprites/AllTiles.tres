@@ -1,14 +1,14 @@
 [gd_resource type="TileSet" load_steps=19 format=3 uid="uid://c2bpujqik8hyi"]
 
-[ext_resource type="Texture2D" uid="uid://bwkd6a56h047r" path="res://sprites/Dungeon/dungeon_16px.png" id="1_3hxly"]
-[ext_resource type="Texture2D" uid="uid://cerljdi53jlh" path="res://sprites/Water/water_16px.png" id="2_utku2"]
-[ext_resource type="Texture2D" uid="uid://bo4fqk6n70e1l" path="res://sprites/Winter/Winter_16px.png" id="3_mbmpc"]
-[ext_resource type="Texture2D" uid="uid://cve1js6dumrgt" path="res://sprites/Exterior/exterior_asia.png" id="5_e7c1h"]
-[ext_resource type="Texture2D" uid="uid://ctyf2dfnwaj85" path="res://sprites/Desert/desert_16x.png" id="6_pt0r5"]
-[ext_resource type="Texture2D" uid="uid://cqs7u86puhhqi" path="res://sprites/Farming/farm.png" id="7_mxqwe"]
-[ext_resource type="Texture2D" uid="uid://bta6jsipd8t20" path="res://sprites/Fire/fire_16px.png" id="8_j0qf8"]
-[ext_resource type="Texture2D" uid="uid://dv8fit1wj4f6j" path="res://sprites/Nature/nature_16px.png" id="9_b2kym"]
-[ext_resource type="Texture2D" uid="uid://rce7jxkp1kuf" path="res://sprites/Overworld/overworld_16px.png" id="10_kex3f"]
+[ext_resource type="Texture2D" uid="uid://0c8yhcdyl3rw" path="res://sprites/Dungeon/dungeon_16px.png" id="1_3hxly"]
+[ext_resource type="Texture2D" uid="uid://dunwh3gu1g6tg" path="res://sprites/Water/water_16px.png" id="2_utku2"]
+[ext_resource type="Texture2D" uid="uid://cake37eqh83n" path="res://sprites/Winter/Winter_16px.png" id="3_mbmpc"]
+[ext_resource type="Texture2D" uid="uid://bnspko1jpdwr7" path="res://sprites/Exterior/exterior_asia.png" id="5_e7c1h"]
+[ext_resource type="Texture2D" uid="uid://be701l80faedo" path="res://sprites/Desert/desert_16x.png" id="6_pt0r5"]
+[ext_resource type="Texture2D" uid="uid://5v7cwwvucxrw" path="res://sprites/Farming/farm.png" id="7_mxqwe"]
+[ext_resource type="Texture2D" uid="uid://c7oo853prfoiy" path="res://sprites/Fire/fire_16px.png" id="8_j0qf8"]
+[ext_resource type="Texture2D" uid="uid://c52uuffcpk3ig" path="res://sprites/Nature/nature_16px.png" id="9_b2kym"]
+[ext_resource type="Texture2D" uid="uid://8tfv0i81u8et" path="res://sprites/Overworld/overworld_16px.png" id="10_kex3f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u6t2x"]
 texture = ExtResource("1_3hxly")
