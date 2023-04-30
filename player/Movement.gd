@@ -22,6 +22,9 @@ func move_to_tile(direction: Vector2i) -> void:
 		_player.set_state(_player.State.IDLE)
 		return
 	
+	# Check if next tile has pushable object:
+	
+	
 	# Movement
 	var t: Tween = get_tree().create_tween().set_ease(Tween.EASE_IN)
 	t.tween_property(_player, "position", new_position, WALK_TIME)
@@ -37,5 +40,5 @@ func move_to_tile(direction: Vector2i) -> void:
 	_player.set_state(_player.State.IDLE)
 	
 	
-	
+
 	

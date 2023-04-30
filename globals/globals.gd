@@ -12,9 +12,9 @@ var exit_code: Dictionary = {
 }
 
 var spawn_codes: Dictionary = {
-	"house_to_bed": Vector2i(3,7),
-	"bed_to_house": Vector2i(1,7),
-	"house_to_town": Vector2i(7,6),
+	"house_to_bedroom": Vector2i(11,2),
+	"bedroom_to_house": Vector2i(1,7),
+	"house_to_town": Vector2i(6,5),
 	"town_to_house": Vector2i(12,8),
 }
 

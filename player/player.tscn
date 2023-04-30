@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bhnlqa22xrh1j"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_lalni"]
-[ext_resource type="Texture2D" uid="uid://bbhf5cjyljsmv" path="res://sprites/character.png" id="2_rhm5p"]
+[ext_resource type="Texture2D" uid="uid://b5artbiyk00aq" path="res://sprites/character.png" id="2_rhm5p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2tn8p"]
 atlas = ExtResource("2_rhm5p")
@@ -139,7 +139,7 @@ script = ExtResource("1_lalni")
 z_index = 2
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_c5qc4")
-animation = &"walk_up"
+animation = &"walk_down"
 centered = false
 offset = Vector2(0, -4)
 metadata/_edit_lock_ = true

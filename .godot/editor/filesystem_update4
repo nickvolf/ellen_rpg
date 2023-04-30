@@ -1,3 +1,8 @@
-res://levels/test_inheritence.tscn
-res://sprites/AllTiles.tres
 res://levels/house.tscn
+res://sprites/AllTiles.tres
+res://levels/bedroom.tscn
+res://globals/globals.gd
+res://levels/town.tscn
+res://levels/base_level.tscn
+res://player/Camera2D.gd
+res://player/player.tscn
