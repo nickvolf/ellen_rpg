@@ -38,7 +38,3 @@ func move_to_tile(direction: Vector2i) -> void:
 		LevelMap.switch_scene(new_tile)
 		
 	_player.set_state(_player.State.IDLE)
-	
-	
-
-	

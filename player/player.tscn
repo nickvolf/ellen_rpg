@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhnlqa22xrh1j"]
+[gd_scene load_steps=17 format=3 uid="uid://bhnlqa22xrh1j"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_lalni"]
 [ext_resource type="Texture2D" uid="uid://b5artbiyk00aq" path="res://sprites/character.png" id="2_rhm5p"]
@@ -127,6 +127,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kht6a"]
+size = Vector2(12, 13)
+
 [node name="Player" type="Area2D"]
 z_as_relative = false
 y_sort_enabled = true
@@ -154,3 +157,7 @@ offset_bottom = 37.0
 text = "asdf"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 7.5)
+shape = SubResource("RectangleShape2D_kht6a")
