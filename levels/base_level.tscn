@@ -1,17 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://dh06x1p28d81y"]
+[gd_scene load_steps=7 format=3 uid="uid://bkfsncnn7eqso"]
 
 [ext_resource type="TileSet" uid="uid://c2bpujqik8hyi" path="res://sprites/AllTiles.tres" id="1_1yrjo"]
-[ext_resource type="Script" path="res://levels/base_level.gd" id="1_innc4"]
 [ext_resource type="PackedScene" uid="uid://bhnlqa22xrh1j" path="res://player/player.tscn" id="1_mocxx"]
-[ext_resource type="Script" path="res://levels/LevelMap.gd" id="2_gkog6"]
 [ext_resource type="Script" path="res://player/InputManager.gd" id="2_j648g"]
+[ext_resource type="Script" path="res://levels/scripts/LevelMap.gd" id="3_jts6i"]
 [ext_resource type="Script" path="res://player/Movement.gd" id="3_qxs5o"]
 [ext_resource type="Script" path="res://player/Camera2D.gd" id="4_2d4ql"]
 
 [node name="BaseLevel" type="Node2D"]
-script = ExtResource("1_innc4")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Level" type="TileMap" parent="."]
 texture_filter = 1
 tile_set = ExtResource("1_1yrjo")
 format = 2
@@ -51,24 +49,24 @@ layer_5/y_sort_enabled = false
 layer_5/y_sort_origin = 0
 layer_5/z_index = 0
 layer_5/tile_data = PackedInt32Array()
-script = ExtResource("2_gkog6")
+script = ExtResource("3_jts6i")
 player_start = Vector2i(5, 5)
 
-[node name="Player" parent="TileMap" instance=ExtResource("1_mocxx")]
+[node name="Player" parent="Level" instance=ExtResource("1_mocxx")]
 position = Vector2(106, 55)
 
-[node name="Camera2D" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("level_map")]
+[node name="Camera2D" type="Camera2D" parent="Level/Player" node_paths=PackedStringArray("level_map")]
 texture_filter = 1
 limit_left = 0
 limit_top = 0
 script = ExtResource("4_2d4ql")
 level_map = NodePath("../..")
 
-[node name="InputManager" type="Node" parent="TileMap" node_paths=PackedStringArray("_player", "MovementManager")]
+[node name="InputManager" type="Node" parent="Level" node_paths=PackedStringArray("_player", "MovementManager")]
 script = ExtResource("2_j648g")
 _player = NodePath("../Player")
 MovementManager = NodePath("../MovementManager")
 
-[node name="MovementManager" type="Node" parent="TileMap" node_paths=PackedStringArray("_player")]
+[node name="MovementManager" type="Node" parent="Level" node_paths=PackedStringArray("_player")]
 script = ExtResource("3_qxs5o")
 _player = NodePath("../Player")

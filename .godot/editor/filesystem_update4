@@ -1,10 +1,7 @@
-res://player/player.tscn
+res://levels/scenes/base/level.tscn
 res://sprites/AllTiles.tres
-res://levels/base_level.tscn
-res://levels/LevelMap.gd
-res://levels/town.tscn
-res://GameManager.tscn
-res://levels/bedroom.tscn
-res://managers/SceneManager.gd
-res://levels/base_level.gd
+res://player/player.tscn
+res://managers/scenes/GameManager.tscn
+res://levels/scenes/box.tscn
+res://player/InputManager.gd
 res://player/Movement.gd

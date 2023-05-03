@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwy5asxvbdakb"]
+
+[ext_resource type="TileSet" uid="uid://c2bpujqik8hyi" path="res://sprites/AllTiles.tres" id="1_3ytjf"]
+[ext_resource type="Script" path="res://levels/scripts/LevelMap.gd" id="2_2k0k5"]
+[ext_resource type="PackedScene" uid="uid://bhnlqa22xrh1j" path="res://player/player.tscn" id="3_b4vo3"]
+[ext_resource type="Script" path="res://player/Camera2D.gd" id="4_lus6b"]
+[ext_resource type="Script" path="res://player/InputManager.gd" id="5_srnyj"]
+[ext_resource type="Script" path="res://player/Movement.gd" id="6_ghgg3"]
+
+[node name="Level" type="TileMap"]
+texture_filter = 1
+tile_set = ExtResource("1_3ytjf")
+format = 2
+layer_0/name = "collision"
+layer_1/name = "floor"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(0, 2, 1, 65536, 2, 2, 131072, 2, 1, 1, 65538, 1, 65537, 65538, 2, 131073, 65538, 1, 2, 2, 1, 65538, 2, 2, 131074, 2, 1, 196608, 2, 2, 262144, 2, 1, 327680, 2, 2, 196609, 65538, 2, 262145, 65538, 1, 327681, 65538, 2, 196610, 2, 2, 262146, 2, 1, 327682, 2, 2, 393216, 2, 1, 458752, 2, 2, 524288, 2, 1, 393217, 65538, 1, 458753, 65538, 2, 524289, 65538, 1, 393218, 2, 1, 458754, 2, 2, 524290, 2, 1, 589824, 2, 2, 655360, 2, 1, 720896, 2, 2, 589825, 65538, 2, 655361, 65538, 1, 720897, 65538, 2, 589826, 2, 2, 655362, 2, 1, 720898, 2, 2, 3, 65538, 1, 65539, 65538, 2, 131075, 65538, 1, 4, 2, 1, 65540, 2, 2, 131076, 2, 1, 5, 65538, 1, 65541, 65538, 2, 131077, 65538, 1, 196611, 65538, 2, 262147, 65538, 1, 327683, 65538, 2, 196612, 2, 2, 262148, 2, 1, 327684, 2, 2, 196613, 65538, 2, 262149, 65538, 1, 327685, 65538, 2, 393219, 65538, 1, 458755, 65538, 2, 524291, 65538, 1, 393220, 2, 1, 458756, 2, 2, 524292, 2, 1, 393221, 65538, 1, 458757, 65538, 2, 524293, 65538, 1, 589827, 65538, 2, 655363, 65538, 1, 720899, 65538, 2, 589828, 2, 2, 655364, 2, 1, 720900, 2, 2, 589829, 65538, 2, 655365, 65538, 1, 720901, 65538, 2, 6, 2, 1, 65542, 2, 2, 131078, 2, 1, 7, 65538, 1, 65543, 65538, 2, 131079, 65538, 1, 8, 2, 1, 65544, 2, 2, 131080, 2, 1, 196614, 2, 2, 262150, 2, 1, 327686, 2, 2, 196615, 65538, 2, 262151, 65538, 1, 327687, 65538, 2, 196616, 2, 2, 262152, 2, 1, 327688, 2, 2, 393222, 2, 1, 458758, 2, 2, 524294, 2, 1, 393223, 65538, 1, 458759, 65538, 2, 524295, 65538, 1, 393224, 2, 1, 458760, 2, 2, 524296, 2, 1, 589830, 2, 2, 655366, 2, 1, 720902, 2, 2, 589831, 65538, 2, 655367, 65538, 1, 720903, 65538, 2, 589832, 2, 2, 655368, 2, 1, 720904, 2, 2, 9, 65538, 1, 65545, 65538, 2, 131081, 65538, 1, 10, 2, 1, 65546, 2, 2, 131082, 2, 1, 11, 65538, 1, 65547, 65538, 2, 131083, 65538, 1, 196617, 65538, 2, 262153, 65538, 1, 327689, 65538, 2, 196618, 2, 2, 262154, 2, 1, 327690, 2, 2, 196619, 65538, 2, 262155, 65538, 1, 327691, 65538, 2, 393225, 65538, 1, 458761, 65538, 2, 524297, 65538, 1, 393226, 2, 1, 458762, 2, 2, 524298, 2, 1, 393227, 65538, 1, 458763, 65538, 2, 524299, 65538, 1, 589833, 65538, 2, 655369, 65538, 1, 720905, 65538, 2, 589834, 2, 2, 655370, 2, 1, 720906, 2, 2, 589835, 65538, 2, 655371, 65538, 1, 720907, 65538, 2, 12, 2, 1, 65548, 2, 2, 131084, 2, 1, 13, 65538, 1, 65549, 65538, 2, 131085, 65538, 1, 14, 2, 1, 65550, 2, 2, 131086, 2, 1, 196620, 2, 2, 262156, 2, 1, 327692, 2, 2, 196621, 65538, 2, 262157, 65538, 1, 327693, 65538, 2, 196622, 2, 2, 262158, 2, 1, 327694, 2, 2, 393228, 2, 1, 458764, 2, 2, 524300, 2, 1, 393229, 65538, 1, 458765, 65538, 2, 524301, 65538, 1, 393230, 2, 1, 458766, 2, 2, 524302, 2, 1, 589836, 2, 2, 655372, 2, 1, 720908, 2, 2, 589837, 65538, 2, 655373, 65538, 1, 720909, 65538, 2, 589838, 2, 2, 655374, 2, 1, 720910, 2, 2, 15, 65538, 1, 65551, 65538, 2, 131087, 65538, 1, 16, 2, 1, 65552, 2, 2, 131088, 2, 1, 17, 65538, 1, 65553, 65538, 2, 131089, 65538, 1, 196623, 65538, 2, 262159, 65538, 1, 327695, 65538, 2, 196624, 2, 2, 262160, 2, 1, 327696, 2, 2, 196625, 65538, 2, 262161, 65538, 1, 327697, 65538, 2, 393231, 65538, 1, 458767, 65538, 2, 524303, 65538, 1, 393232, 2, 1, 458768, 2, 2, 524304, 2, 1, 393233, 65538, 1, 458769, 65538, 2, 524305, 65538, 1, 589839, 65538, 2, 655375, 65538, 1, 720911, 65538, 2, 589840, 2, 2, 655376, 2, 1, 720912, 2, 2, 589841, 65538, 2, 655377, 65538, 1, 720913, 65538, 2, 18, 2, 1, 65554, 2, 2, 131090, 2, 1, 196626, 2, 2, 262162, 2, 1, 327698, 2, 2, 393234, 2, 1, 458770, 2, 2, 524306, 2, 1, 589842, 2, 2, 655378, 2, 1, 720914, 2, 2)
+layer_2/name = "wall"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "decoration"
+layer_3/enabled = true
+layer_3/modulate = Color(1, 1, 1, 1)
+layer_3/y_sort_enabled = false
+layer_3/y_sort_origin = 0
+layer_3/z_index = 0
+layer_3/tile_data = PackedInt32Array()
+layer_4/name = "furniture"
+layer_4/enabled = true
+layer_4/modulate = Color(1, 1, 1, 1)
+layer_4/y_sort_enabled = false
+layer_4/y_sort_origin = 0
+layer_4/z_index = 0
+layer_4/tile_data = PackedInt32Array()
+layer_5/name = "exit"
+layer_5/enabled = true
+layer_5/modulate = Color(1, 1, 1, 1)
+layer_5/y_sort_enabled = false
+layer_5/y_sort_origin = 0
+layer_5/z_index = 0
+layer_5/tile_data = PackedInt32Array()
+script = ExtResource("2_2k0k5")
+player_start = Vector2i(5, 5)
+
+[node name="Player" parent="." instance=ExtResource("3_b4vo3")]
+position = Vector2(106, 55)
+
+[node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("level_map")]
+texture_filter = 1
+limit_left = 0
+limit_top = 0
+script = ExtResource("4_lus6b")
+level_map = NodePath("../..")
+
+[node name="InputManager" type="Node" parent="." node_paths=PackedStringArray("_player", "MovementManager")]
+script = ExtResource("5_srnyj")
+_player = NodePath("../Player")
+MovementManager = NodePath("../MovementManager")
+
+[node name="MovementManager" type="Node" parent="." node_paths=PackedStringArray("_player")]
+script = ExtResource("6_ghgg3")
+_player = NodePath("../Player")

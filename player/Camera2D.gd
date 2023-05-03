@@ -4,7 +4,6 @@ extends Camera2D
 
 func _ready():
 	var map_rect = level_map.get_used_rect()
-	print(map_rect)
 	limit_top = 0
 	limit_left = 0	
 	limit_bottom = map_rect.size.y * 16
