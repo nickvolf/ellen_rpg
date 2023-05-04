@@ -3,5 +3,8 @@ res://sprites/AllTiles.tres
 res://player/player.tscn
 res://managers/scenes/GameManager.tscn
 res://levels/scenes/box.tscn
-res://player/InputManager.gd
 res://player/Movement.gd
+res://levels/scenes/bedroom0.tscn
+res://levels/base_level.tscn
+res://levels/scenes/bedroom.tscn
+res://managers/scripts/SceneManager.gd

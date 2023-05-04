@@ -63,8 +63,10 @@ limit_top = 0
 script = ExtResource("4_xrdd5")
 level_map = NodePath("../..")
 
-[node name="InputManager" type="Node" parent="."]
+[node name="InputManager" type="Node" parent="." node_paths=PackedStringArray("_player", "MovementManager")]
 script = ExtResource("5_kofnd")
+_player = NodePath("../Player")
+MovementManager = NodePath("../MovementManager")
 
 [node name="MovementManager" type="Node" parent="." node_paths=PackedStringArray("_player")]
 script = ExtResource("6_2yd3r")

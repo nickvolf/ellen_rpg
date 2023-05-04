@@ -1,8 +1,8 @@
 extends Node
 
 var levels: Dictionary = {
-	"level1": "res://levels/scenes/tests/level1.tscn",
-	"level2": "res://levels/scenes/tests/level2.tscn"
+	"level1": "res://levels/scenes/base/level.tscn",
+	"level2": "res://levels/scenes/bedroom.tscn",
 }
 
 var saved_spawn := Vector2i.ZERO
