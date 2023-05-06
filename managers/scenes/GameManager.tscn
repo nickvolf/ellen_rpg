@@ -1,7 +1,70 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbsjeiwoqmyrp"]
+[gd_scene load_steps=7 format=3 uid="uid://cbsjeiwoqmyrp"]
 
 [ext_resource type="Script" path="res://managers/scripts/SceneManager.gd" id="1_083b2"]
 [ext_resource type="PackedScene" uid="uid://dbus65p6yrlso" path="res://levels/scenes/base/level.tscn" id="2_qhstm"]
+
+[sub_resource type="Animation" id="Animation_00uhe"]
+resource_name = "FadeToBlack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_yvxsa"]
+resource_name = "FadeToNormal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2wcx2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ukv0a"]
+_data = {
+"FadeToBlack": SubResource("Animation_00uhe"),
+"FadeToNormal": SubResource("Animation_yvxsa"),
+"RESET": SubResource("Animation_2wcx2")
+}
 
 [node name="GameManager" type="Node"]
 
@@ -9,5 +72,20 @@
 script = ExtResource("1_083b2")
 
 [node name="Level" parent="SceneManager" instance=ExtResource("2_qhstm")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SceneManager"]
+
+[node name="ColorRect" type="ColorRect" parent="SceneManager/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SceneManager/CanvasLayer/ColorRect"]
+libraries = {
+"": SubResource("AnimationLibrary_ukv0a")
+}
 
 [node name="SoundManager" type="Node" parent="."]

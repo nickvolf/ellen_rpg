@@ -1,6 +1,10 @@
-CollisionShape2D
 Sprite2D
+CollisionShape2D
 Area2D
+AnimationPlayer
+AnimationTree
+ColorRect
+CanvasLayer
 RayCast2D
 TileMap
 Node
