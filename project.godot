@@ -30,5 +30,6 @@ window/stretch/mode="canvas_items"
 [layer_names]
 
 2d_physics/layer_1="Player"
-2d_physics/layer_2="Environment"
+2d_physics/layer_2="Box"
 2d_physics/layer_3="Exit"
+2d_physics/layer_4="BoxTriggers"

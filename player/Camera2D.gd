@@ -1,6 +1,7 @@
 extends Camera2D
 
 @export var level_map: TileMap
+@onready var player = $".."
 
 func _ready():
 	var map_rect = level_map.get_used_rect()

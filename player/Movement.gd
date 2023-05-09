@@ -14,7 +14,6 @@ var is_moving := false
 @onready var LevelMap: TileMap = $".."
 
 
-
 func move_to_tile(_direction: Vector2i) -> void:
 	_player.set_state(_player.State.ACTION)
 	var current_pos: Vector2i = _player.current_tile
@@ -22,13 +21,11 @@ func move_to_tile(_direction: Vector2i) -> void:
 	var new_position: Vector2 = new_tile * Globals.TILE_SIZE
 	var new_box_position: Vector2
 	_player.ray_cast_2d.target_position = _direction * Globals.TILE_SIZE
-	
-	
+
 	# Check new tile is walkable for player
 	if is_next_cell_empty(new_tile) == false:
 		return
-	
-	
+
 	# Check if next tile has pushable object:
 	var pushable_box = null
 	var is_moving_box := false
@@ -41,8 +38,8 @@ func move_to_tile(_direction: Vector2i) -> void:
 			# Checking if the box can move
 			if is_next_cell_empty(new_tile+_direction) == false:
 				return
-	
-	
+
+
 	# Movement
 	var t: Tween = get_tree().create_tween().set_ease(Tween.EASE_IN)
 	t.tween_property(_player, "position", new_position, WALK_TIME)
@@ -53,11 +50,7 @@ func move_to_tile(_direction: Vector2i) -> void:
 	
 	# Post Movement
 	_player.sprite.stop()
-	if LevelMap.get_cell_source_id(5, new_tile) != -1:
-		print(new_tile)
-		LevelMap.switch_scene(new_tile)		
-	_player.set_state(_player.State.IDLE)
-	
+	_player.set_state(_player.State.IDLE)	
 	check_player_in_exit()
 
 

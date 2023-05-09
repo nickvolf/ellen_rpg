@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://bidl30eluwhya"]
+[gd_scene load_steps=3 format=3 uid="uid://bidl30eluwhya"]
 
-[ext_resource type="Texture2D" uid="uid://c56q3bq7ca86b" path="res://sprites/interior.png" id="1_4xtlq"]
 [ext_resource type="Script" path="res://levels/scenes/exits/exit.gd" id="1_swnx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pc752"]
@@ -10,11 +9,6 @@ size = Vector2(16, 16)
 texture_filter = 1
 collision_layer = 4
 script = ExtResource("1_swnx1")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_4xtlq")
-region_enabled = true
-region_rect = Rect2(384, 0, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pc752")

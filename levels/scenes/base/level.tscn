@@ -49,9 +49,6 @@ layer_5/z_index = 0
 layer_5/tile_data = PackedInt32Array()
 script = ExtResource("2_7fruw")
 player_start = Vector2i(5, 5)
-box_1_start = Vector2i(4, 4)
-box_2_start = Vector2i(3, 3)
-box_3_start = Vector2i(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("3_7shur")]
 position = Vector2(106, 55)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbsjeiwoqmyrp"]
+[gd_scene load_steps=8 format=3 uid="uid://cbsjeiwoqmyrp"]
 
 [ext_resource type="Script" path="res://managers/scripts/SceneManager.gd" id="1_083b2"]
 [ext_resource type="PackedScene" uid="uid://dbus65p6yrlso" path="res://levels/scenes/base/level.tscn" id="2_qhstm"]
+[ext_resource type="Script" path="res://managers/scripts/SoundManager.gd" id="3_e66vr"]
 
 [sub_resource type="Animation" id="Animation_00uhe"]
 resource_name = "FadeToBlack"
@@ -89,3 +90,12 @@ libraries = {
 }
 
 [node name="SoundManager" type="Node" parent="."]
+script = ExtResource("3_e66vr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundManager"]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="SoundManager"]
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="SoundManager"]
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="SoundManager"]
