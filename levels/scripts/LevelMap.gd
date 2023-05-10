@@ -2,8 +2,9 @@ class_name LevelMap
 extends TileMap
 
 
-
+@export var bgm: String
 @export var player_start: Vector2i
+
 
 
 var box_scene := preload("res://levels/scenes/box.tscn")
@@ -16,6 +17,8 @@ var box_scene := preload("res://levels/scenes/box.tscn")
 
 func _ready() -> void:
 	place_player()
+	if bgm:
+		SoundManager.play(bgm)
 	
 	
 func place_player() -> void:
