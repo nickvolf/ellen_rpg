@@ -14,7 +14,7 @@ func _ready():
 		var p = AudioStreamPlayer.new()
 		add_child(p)
 		available.append(p)
-		p.connect("finished", _on_stream_finished)
+		p.connect("finished", func(): _on_stream_finished(p))
 		p.bus = bus
 		
 		

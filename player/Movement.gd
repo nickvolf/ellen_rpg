@@ -4,6 +4,10 @@ extends Node
 signal exit_entered(level_code: String, spawn_code: String)
 
 const WALK_TIME := 0.4
+const PUSH_SOUND = "res://sounds/cloth4.ogg"
+const WALKING_SOUNDS = [
+	"res://sounds/footstep_carpet_000.ogg", "res://sounds/footstep_carpet_001.ogg", "res://sounds/footstep_carpet_002.ogg", "res://sounds/footstep_carpet_003.ogg", "res://sounds/footstep_carpet_004.ogg"
+]
 
 @export var _player: Player
 @export var velocity := 100.0
@@ -42,8 +46,10 @@ func move_to_tile(_direction: Vector2i) -> void:
 
 	# Movement
 	var t: Tween = get_tree().create_tween().set_ease(Tween.EASE_IN)
+#	play_walking_sound()
 	t.tween_property(_player, "position", new_position, WALK_TIME)
 	if pushable_box != null and is_moving_box == true:
+		SoundManager.play(PUSH_SOUND)
 		t.parallel().tween_property(pushable_box, "position", new_box_position, WALK_TIME)
 	_player.current_tile = new_tile
 	await t.finished
@@ -68,3 +74,8 @@ func check_player_in_exit():
 			LevelMap.set_process(false)
 			LevelMap.input_manager.set_process(false)
 			emit_signal("exit_entered", area.EXIT_TO_CODE, area.EXIT_TRANSITION_CODE)
+
+func play_walking_sound():
+	var ind := randi()%5
+	var sound = WALKING_SOUNDS[ind]
+	SoundManager.play(sound)

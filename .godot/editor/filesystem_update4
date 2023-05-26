@@ -1,7 +1,6 @@
 res://managers/scenes/GameManager.tscn
 res://sprites/AllTiles.tres
-res://managers/scripts/SceneManager.gd
-res://managers/scripts/SoundManager.gd
 res://levels/scenes/base/level.tscn
-res://levels/scripts/LevelMap.gd
 res://levels/scenes/bedroom.tscn
+res://player/Movement.gd
+res://managers/scripts/SoundManager.gd
