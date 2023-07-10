@@ -7,7 +7,7 @@ extends TileMap
 
 
 
-var box_scene := preload("res://levels/scenes/box.tscn")
+var box_scene := preload("res://levels/scenes/placeables/box.tscn")
 
 
 @onready var player = $Player
@@ -17,8 +17,8 @@ var box_scene := preload("res://levels/scenes/box.tscn")
 
 func _ready() -> void:
 	place_player()
-	if bgm:
-		SoundManager.play(bgm)
+#	if bgm:
+#		SoundManager.play(bgm)
 	
 	
 func place_player() -> void:

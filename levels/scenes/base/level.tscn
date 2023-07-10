@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://levels/scripts/LevelMap.gd" id="2_7fruw"]
 [ext_resource type="PackedScene" uid="uid://bhnlqa22xrh1j" path="res://player/player.tscn" id="3_7shur"]
 [ext_resource type="Script" path="res://player/Camera2D.gd" id="4_xrdd5"]
-[ext_resource type="Script" path="res://player/InputManager.gd" id="5_kofnd"]
-[ext_resource type="Script" path="res://player/Movement.gd" id="6_2yd3r"]
+[ext_resource type="Script" path="res://managers/scripts/InputManager.gd" id="5_ernwg"]
+[ext_resource type="Script" path="res://managers/scripts/MovementManager.gd" id="6_k61mc"]
 
 [node name="Level" type="TileMap"]
 texture_filter = 1
@@ -40,13 +40,6 @@ layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
 layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array()
-layer_5/name = "exit"
-layer_5/enabled = true
-layer_5/modulate = Color(1, 1, 1, 1)
-layer_5/y_sort_enabled = false
-layer_5/y_sort_origin = 0
-layer_5/z_index = 0
-layer_5/tile_data = PackedInt32Array()
 script = ExtResource("2_7fruw")
 player_start = Vector2i(5, 5)
 
@@ -62,10 +55,10 @@ script = ExtResource("4_xrdd5")
 level_map = NodePath("../..")
 
 [node name="InputManager" type="Node" parent="." node_paths=PackedStringArray("_player", "MovementManager")]
-script = ExtResource("5_kofnd")
+script = ExtResource("5_ernwg")
 _player = NodePath("../Player")
 MovementManager = NodePath("../MovementManager")
 
 [node name="MovementManager" type="Node" parent="." node_paths=PackedStringArray("_player")]
-script = ExtResource("6_2yd3r")
+script = ExtResource("6_k61mc")
 _player = NodePath("../Player")

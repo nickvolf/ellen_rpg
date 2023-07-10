@@ -19,8 +19,9 @@ var spawn_codes: Dictionary = {
 	"bedroom_to_house": Vector2i(2,8),
 	"house_to_bedroom": Vector2i(10,3),
 	"house_to_town": Vector2i(7,10),
-	"town_to_cave": Vector2i(5,5),
+	"town_to_cave": Vector2i(8,9),
 	"town_to_forest": Vector2i(5,5),
+	"town_to_house": Vector2i(7,8),
 	"cave_to_town": Vector2i(14,10)
 }
 

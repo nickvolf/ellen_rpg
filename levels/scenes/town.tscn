@@ -33,3 +33,8 @@ EXIT_TRANSITION_CODE = "town_to_forest"
 position = Vector2(472, 16)
 EXIT_TO_CODE = "forest"
 EXIT_TRANSITION_CODE = "town_to_forest"
+
+[node name="HouseExit" parent="." index="7" instance=ExtResource("2_18yfs")]
+position = Vector2(120, 152)
+EXIT_TO_CODE = "house"
+EXIT_TRANSITION_CODE = "town_to_house"
